@@ -46,8 +46,6 @@ module.exports = {
                 //  Return User
                 return user
             } catch (err) {
-                // console.log(err.errors)
-                console.log('**********************************')
                 if (err.name === 'SequelizeUniqueConstraintError') {
                     err.errors.forEach((e) => errors[e.path] = `${e.path} is aleady taken`)
                 }
